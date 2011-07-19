@@ -1,0 +1,288 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1DE224B113D5E3CA008E2CAA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DE224B013D5E3CA008E2CAA /* Cocoa.framework */; };
+		1DE224BB13D5E3CA008E2CAA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1DE224B913D5E3CA008E2CAA /* InfoPlist.strings */; };
+		1DE224BE13D5E3CA008E2CAA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE224BD13D5E3CA008E2CAA /* main.m */; };
+		1DE224C113D5E3CA008E2CAA /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 1DE224BF13D5E3CA008E2CAA /* Credits.rtf */; };
+		1DE224C413D5E3CA008E2CAA /* NicoLiveAlertAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE224C313D5E3CA008E2CAA /* NicoLiveAlertAppDelegate.m */; };
+		1DE224C713D5E3CB008E2CAA /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DE224C513D5E3CB008E2CAA /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1DE224AC13D5E3CA008E2CAA /* NicoLiveAlert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NicoLiveAlert.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DE224B013D5E3CA008E2CAA /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		1DE224B313D5E3CA008E2CAA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		1DE224B413D5E3CA008E2CAA /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		1DE224B513D5E3CA008E2CAA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1DE224B813D5E3CA008E2CAA /* NicoLiveAlert-Info.plist */ = {isa = PBXFileReference; path = "NicoLiveAlert-Info.plist"; sourceTree = "<group>"; };
+		1DE224BA13D5E3CA008E2CAA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1DE224BC13D5E3CA008E2CAA /* NicoLiveAlert-Prefix.pch */ = {isa = PBXFileReference; path = "NicoLiveAlert-Prefix.pch"; sourceTree = "<group>"; };
+		1DE224BD13D5E3CA008E2CAA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1DE224C013D5E3CA008E2CAA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		1DE224C213D5E3CA008E2CAA /* NicoLiveAlertAppDelegate.h */ = {isa = PBXFileReference; path = NicoLiveAlertAppDelegate.h; sourceTree = "<group>"; };
+		1DE224C313D5E3CA008E2CAA /* NicoLiveAlertAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NicoLiveAlertAppDelegate.m; sourceTree = "<group>"; };
+		1DE224C613D5E3CB008E2CAA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1DE224A913D5E3CA008E2CAA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1DE224B113D5E3CA008E2CAA /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1DE224A113D5E3CA008E2CAA = {
+			isa = PBXGroup;
+			children = (
+				1DE224B613D5E3CA008E2CAA /* NicoLiveAlert */,
+				1DE224AF13D5E3CA008E2CAA /* Frameworks */,
+				1DE224AD13D5E3CA008E2CAA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1DE224AD13D5E3CA008E2CAA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1DE224AC13D5E3CA008E2CAA /* NicoLiveAlert.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1DE224AF13D5E3CA008E2CAA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1DE224B013D5E3CA008E2CAA /* Cocoa.framework */,
+				1DE224B213D5E3CA008E2CAA /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1DE224B213D5E3CA008E2CAA /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1DE224B313D5E3CA008E2CAA /* AppKit.framework */,
+				1DE224B413D5E3CA008E2CAA /* CoreData.framework */,
+				1DE224B513D5E3CA008E2CAA /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		1DE224B613D5E3CA008E2CAA /* NicoLiveAlert */ = {
+			isa = PBXGroup;
+			children = (
+				1DE224C213D5E3CA008E2CAA /* NicoLiveAlertAppDelegate.h */,
+				1DE224C313D5E3CA008E2CAA /* NicoLiveAlertAppDelegate.m */,
+				1DE224C513D5E3CB008E2CAA /* MainMenu.xib */,
+				1DE224B713D5E3CA008E2CAA /* Supporting Files */,
+			);
+			path = NicoLiveAlert;
+			sourceTree = "<group>";
+		};
+		1DE224B713D5E3CA008E2CAA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1DE224B813D5E3CA008E2CAA /* NicoLiveAlert-Info.plist */,
+				1DE224B913D5E3CA008E2CAA /* InfoPlist.strings */,
+				1DE224BC13D5E3CA008E2CAA /* NicoLiveAlert-Prefix.pch */,
+				1DE224BD13D5E3CA008E2CAA /* main.m */,
+				1DE224BF13D5E3CA008E2CAA /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1DE224AB13D5E3CA008E2CAA /* NicoLiveAlert */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DE224CA13D5E3CB008E2CAA /* Build configuration list for PBXNativeTarget "NicoLiveAlert" */;
+			buildPhases = (
+				1DE224A813D5E3CA008E2CAA /* Sources */,
+				1DE224A913D5E3CA008E2CAA /* Frameworks */,
+				1DE224AA13D5E3CA008E2CAA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NicoLiveAlert;
+			productName = NicoLiveAlert;
+			productReference = 1DE224AC13D5E3CA008E2CAA /* NicoLiveAlert.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1DE224A313D5E3CA008E2CAA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = n/a;
+			};
+			buildConfigurationList = 1DE224A613D5E3CA008E2CAA /* Build configuration list for PBXProject "NicoLiveAlert" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1DE224A113D5E3CA008E2CAA;
+			productRefGroup = 1DE224AD13D5E3CA008E2CAA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1DE224AB13D5E3CA008E2CAA /* NicoLiveAlert */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1DE224AA13D5E3CA008E2CAA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1DE224BB13D5E3CA008E2CAA /* InfoPlist.strings in Resources */,
+				1DE224C113D5E3CA008E2CAA /* Credits.rtf in Resources */,
+				1DE224C713D5E3CB008E2CAA /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1DE224A813D5E3CA008E2CAA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1DE224BE13D5E3CA008E2CAA /* main.m in Sources */,
+				1DE224C413D5E3CA008E2CAA /* NicoLiveAlertAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1DE224B913D5E3CA008E2CAA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1DE224BA13D5E3CA008E2CAA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1DE224BF13D5E3CA008E2CAA /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1DE224C013D5E3CA008E2CAA /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		1DE224C513D5E3CB008E2CAA /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1DE224C613D5E3CB008E2CAA /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1DE224C813D5E3CB008E2CAA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		1DE224C913D5E3CB008E2CAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		1DE224CB13D5E3CB008E2CAA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NicoLiveAlert/NicoLiveAlert-Prefix.pch";
+				INFOPLIST_FILE = "NicoLiveAlert/NicoLiveAlert-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		1DE224CC13D5E3CB008E2CAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NicoLiveAlert/NicoLiveAlert-Prefix.pch";
+				INFOPLIST_FILE = "NicoLiveAlert/NicoLiveAlert-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DE224A613D5E3CA008E2CAA /* Build configuration list for PBXProject "NicoLiveAlert" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DE224C813D5E3CB008E2CAA /* Debug */,
+				1DE224C913D5E3CB008E2CAA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DE224CA13D5E3CB008E2CAA /* Build configuration list for PBXNativeTarget "NicoLiveAlert" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DE224CB13D5E3CB008E2CAA /* Debug */,
+				1DE224CC13D5E3CB008E2CAA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1DE224A313D5E3CA008E2CAA /* Project object */;
+}
