@@ -11,7 +11,21 @@
 
 @interface SocketConnection : NSObject {
 @private
-    
+		// Buffer
+	NSMutableData *dataBuffer;
+		// Queue
+	NSMutableArray *sendQueue;
+	NSMutableArray *recieveQueue;
+	BOOL sendIsBusy;
+		// Stream
+	NSInputStream *iStream;
+	NSOutputStream *oStream;
 }
-
+- (id) init;
+- (id) initWithRecieveQueue:(NSMutableArray *)rcvQueue;
+	// public method
+- (void) setRecieveQueue:(NSMutableArray *)rcvQueue;
+- (void) openServer:(NSString *)server port:(NSInteger)port;
+- (void) closeServer;
+- (void) sendText:(NSString *)text;
 @end
