@@ -1,0 +1,16 @@
+// Localizable.strings
+// string used in this program to localized
+//
+//
+"LoginProgress" = "ログイン中…";
+"LoginDone" = "ログイン完了";
+"LoginFail" = "ログインに失敗しました";
+  // menubar item title
+"TitleProgram" = "放送中の番組";
+"TitleLoginDone" = "ログイン中";
+"TitleUnLogin" = "ログイン";
+"TitlePreference" = "環境設定…";
+"TitleQuit" = "終了";
+"TitleAbout" = "NicoLiveAlertについて…";
+	// statau title
+"ProgramEnd" = "放送終了";
