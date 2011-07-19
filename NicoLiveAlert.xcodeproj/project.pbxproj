@@ -29,6 +29,8 @@
 		1DE224C113D5E3CA008E2CAA /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 1DE224BF13D5E3CA008E2CAA /* Credits.rtf */; };
 		1DE224C413D5E3CA008E2CAA /* NicoLiveAlertAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE224C313D5E3CA008E2CAA /* NicoLiveAlertAppDelegate.m */; };
 		1DE224C713D5E3CB008E2CAA /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DE224C513D5E3CB008E2CAA /* MainMenu.xib */; };
+		1DE28E8E13D6172F0004E82E /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = 1DE28E8C13D6172F0004E82E /* Growl Registration Ticket.growlRegDict */; };
+		1DE28E8F13D6172F0004E82E /* UserDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1DE28E8D13D6172F0004E82E /* UserDefaults.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -80,6 +82,8 @@
 		1DE224C213D5E3CA008E2CAA /* NicoLiveAlertAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NicoLiveAlertAppDelegate.h; sourceTree = "<group>"; };
 		1DE224C313D5E3CA008E2CAA /* NicoLiveAlertAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NicoLiveAlertAppDelegate.m; sourceTree = "<group>"; };
 		1DE224C613D5E3CB008E2CAA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		1DE28E8C13D6172F0004E82E /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
+		1DE28E8D13D6172F0004E82E /* UserDefaults.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = UserDefaults.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +212,8 @@
 		1DE224B713D5E3CA008E2CAA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1DE28E8C13D6172F0004E82E /* Growl Registration Ticket.growlRegDict */,
+				1DE28E8D13D6172F0004E82E /* UserDefaults.plist */,
 				1DE224B813D5E3CA008E2CAA /* NicoLiveAlert-Info.plist */,
 				1DE224B913D5E3CA008E2CAA /* InfoPlist.strings */,
 				1DE224BC13D5E3CA008E2CAA /* NicoLiveAlert-Prefix.pch */,
@@ -278,6 +284,8 @@
 				1DCF3EE613D5EC8D00CB48DD /* SBIconRot2.png in Resources */,
 				1DCF3EE713D5EC8D00CB48DD /* TBIcon.png in Resources */,
 				1DCF3EE813D5EC8D00CB48DD /* TBIconAlt.png in Resources */,
+				1DE28E8E13D6172F0004E82E /* Growl Registration Ticket.growlRegDict in Resources */,
+				1DE28E8F13D6172F0004E82E /* UserDefaults.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
