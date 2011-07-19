@@ -13,6 +13,9 @@
 		1DCF3ECD13D5E6CB00CB48DD /* SocketConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF3ECC13D5E6CB00CB48DD /* SocketConnection.m */; };
 		1DCF3ED013D5E70100CB48DD /* NicoLiveProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF3ECF13D5E70100CB48DD /* NicoLiveProgram.m */; };
 		1DCF3ED313D5E74B00CB48DD /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF3ED213D5E74B00CB48DD /* RegexKitLite.m */; };
+		1DCF3ED513D5EA6100CB48DD /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DCF3ED413D5EA6100CB48DD /* Security.framework */; };
+		1DCF3ED713D5EA7A00CB48DD /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DCF3ED613D5EA7A00CB48DD /* Growl.framework */; };
+		1DCF3ED913D5EACA00CB48DD /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1DCF3ED613D5EA7A00CB48DD /* Growl.framework */; };
 		1DE224B113D5E3CA008E2CAA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DE224B013D5E3CA008E2CAA /* Cocoa.framework */; };
 		1DE224BB13D5E3CA008E2CAA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1DE224B913D5E3CA008E2CAA /* InfoPlist.strings */; };
 		1DE224BE13D5E3CA008E2CAA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE224BD13D5E3CA008E2CAA /* main.m */; };
@@ -20,6 +23,19 @@
 		1DE224C413D5E3CA008E2CAA /* NicoLiveAlertAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE224C313D5E3CA008E2CAA /* NicoLiveAlertAppDelegate.m */; };
 		1DE224C713D5E3CB008E2CAA /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DE224C513D5E3CB008E2CAA /* MainMenu.xib */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1DCF3ED813D5EA9900CB48DD /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1DCF3ED913D5EACA00CB48DD /* Growl.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1DCF3EC213D5E61000CB48DD /* NicoLive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NicoLive.h; path = NicoLive/NicoLive.h; sourceTree = "<group>"; };
@@ -34,6 +50,8 @@
 		1DCF3ECF13D5E70100CB48DD /* NicoLiveProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NicoLiveProgram.m; path = NicoLive/NicoLiveProgram.m; sourceTree = "<group>"; };
 		1DCF3ED113D5E74B00CB48DD /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegexKitLite.h; path = RegexKitLite/RegexKitLite.h; sourceTree = "<group>"; };
 		1DCF3ED213D5E74B00CB48DD /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegexKitLite.m; path = RegexKitLite/RegexKitLite.m; sourceTree = "<group>"; };
+		1DCF3ED413D5EA6100CB48DD /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		1DCF3ED613D5EA7A00CB48DD /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = ../../Growl/Frameworks/Growl.framework; sourceTree = "<group>"; };
 		1DE224AC13D5E3CA008E2CAA /* NicoLiveAlert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NicoLiveAlert.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DE224B013D5E3CA008E2CAA /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		1DE224B313D5E3CA008E2CAA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -55,6 +73,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DE224B113D5E3CA008E2CAA /* Cocoa.framework in Frameworks */,
+				1DCF3ED513D5EA6100CB48DD /* Security.framework in Frameworks */,
+				1DCF3ED713D5EA7A00CB48DD /* Growl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,6 +148,7 @@
 		1DE224AF13D5E3CA008E2CAA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1DCF3ED613D5EA7A00CB48DD /* Growl.framework */,
 				1DE224B013D5E3CA008E2CAA /* Cocoa.framework */,
 				1DE224B213D5E3CA008E2CAA /* Other Frameworks */,
 			);
@@ -137,6 +158,7 @@
 		1DE224B213D5E3CA008E2CAA /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1DCF3ED413D5EA6100CB48DD /* Security.framework */,
 				1DE224B313D5E3CA008E2CAA /* AppKit.framework */,
 				1DE224B413D5E3CA008E2CAA /* CoreData.framework */,
 				1DE224B513D5E3CA008E2CAA /* Foundation.framework */,
@@ -182,6 +204,7 @@
 				1DE224A813D5E3CA008E2CAA /* Sources */,
 				1DE224A913D5E3CA008E2CAA /* Frameworks */,
 				1DE224AA13D5E3CA008E2CAA /* Resources */,
+				1DCF3ED813D5EA9900CB48DD /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -313,6 +336,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../Growl/Frameworks\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -329,6 +356,10 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../Growl/Frameworks\"",
+				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NicoLiveAlert/NicoLiveAlert-Prefix.pch";
