@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1DCF3EC413D5E61000CB48DD /* NicoLive.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF3EC313D5E61000CB48DD /* NicoLive.m */; };
+		1DCF3EC713D5E66200CB48DD /* SFKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF3EC613D5E66200CB48DD /* SFKeychain.m */; };
 		1DE224B113D5E3CA008E2CAA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DE224B013D5E3CA008E2CAA /* Cocoa.framework */; };
 		1DE224BB13D5E3CA008E2CAA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1DE224B913D5E3CA008E2CAA /* InfoPlist.strings */; };
 		1DE224BE13D5E3CA008E2CAA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE224BD13D5E3CA008E2CAA /* main.m */; };
@@ -19,6 +20,8 @@
 /* Begin PBXFileReference section */
 		1DCF3EC213D5E61000CB48DD /* NicoLive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NicoLive.h; path = NicoLive/NicoLive.h; sourceTree = "<group>"; };
 		1DCF3EC313D5E61000CB48DD /* NicoLive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NicoLive.m; path = NicoLive/NicoLive.m; sourceTree = "<group>"; };
+		1DCF3EC513D5E66200CB48DD /* SFKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SFKeychain.h; path = Security/SFKeychain.h; sourceTree = "<group>"; };
+		1DCF3EC613D5E66200CB48DD /* SFKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SFKeychain.m; path = Security/SFKeychain.m; sourceTree = "<group>"; };
 		1DE224AC13D5E3CA008E2CAA /* NicoLiveAlert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NicoLiveAlert.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DE224B013D5E3CA008E2CAA /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		1DE224B313D5E3CA008E2CAA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -58,6 +61,8 @@
 		1DCF3EBE13D5E4EF00CB48DD /* Security */ = {
 			isa = PBXGroup;
 			children = (
+				1DCF3EC513D5E66200CB48DD /* SFKeychain.h */,
+				1DCF3EC613D5E66200CB48DD /* SFKeychain.m */,
 			);
 			name = Security;
 			sourceTree = "<group>";
@@ -213,6 +218,7 @@
 				1DE224BE13D5E3CA008E2CAA /* main.m in Sources */,
 				1DE224C413D5E3CA008E2CAA /* NicoLiveAlertAppDelegate.m in Sources */,
 				1DCF3EC413D5E61000CB48DD /* NicoLive.m in Sources */,
+				1DCF3EC713D5E66200CB48DD /* SFKeychain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
