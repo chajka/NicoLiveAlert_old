@@ -52,6 +52,7 @@
 		1DCF3ED213D5E74B00CB48DD /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegexKitLite.m; path = RegexKitLite/RegexKitLite.m; sourceTree = "<group>"; };
 		1DCF3ED413D5EA6100CB48DD /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		1DCF3ED613D5EA7A00CB48DD /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = ../../Growl/Frameworks/Growl.framework; sourceTree = "<group>"; };
+		1DCF3EDA13D5EB5200CB48DD /* NicoLiveAlertDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NicoLiveAlertDefinitions.h; sourceTree = "<group>"; };
 		1DE224AC13D5E3CA008E2CAA /* NicoLiveAlert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NicoLiveAlert.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DE224B013D5E3CA008E2CAA /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		1DE224B313D5E3CA008E2CAA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -173,6 +174,7 @@
 				1DCF3EC113D5E5AD00CB48DD /* Networking */,
 				1DCF3EBE13D5E4EF00CB48DD /* Security */,
 				1DCF3EBF13D5E50800CB48DD /* RegexKitLite */,
+				1DCF3EDA13D5EB5200CB48DD /* NicoLiveAlertDefinitions.h */,
 				1DE224C213D5E3CA008E2CAA /* NicoLiveAlertAppDelegate.h */,
 				1DE224C313D5E3CA008E2CAA /* NicoLiveAlertAppDelegate.m */,
 				1DE224C513D5E3CB008E2CAA /* MainMenu.xib */,
