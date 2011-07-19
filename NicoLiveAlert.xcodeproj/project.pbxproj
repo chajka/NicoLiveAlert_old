@@ -16,6 +16,13 @@
 		1DCF3ED513D5EA6100CB48DD /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DCF3ED413D5EA6100CB48DD /* Security.framework */; };
 		1DCF3ED713D5EA7A00CB48DD /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DCF3ED613D5EA7A00CB48DD /* Growl.framework */; };
 		1DCF3ED913D5EACA00CB48DD /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1DCF3ED613D5EA7A00CB48DD /* Growl.framework */; };
+		1DCF3EE213D5EC8D00CB48DD /* SBIconHaveProg.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DCF3EDB13D5EC8D00CB48DD /* SBIconHaveProg.png */; };
+		1DCF3EE313D5EC8D00CB48DD /* SBIconNoProg.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DCF3EDC13D5EC8D00CB48DD /* SBIconNoProg.png */; };
+		1DCF3EE413D5EC8D00CB48DD /* SBIconProgAlt.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DCF3EDD13D5EC8D00CB48DD /* SBIconProgAlt.png */; };
+		1DCF3EE513D5EC8D00CB48DD /* SBIconRot1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DCF3EDE13D5EC8D00CB48DD /* SBIconRot1.png */; };
+		1DCF3EE613D5EC8D00CB48DD /* SBIconRot2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DCF3EDF13D5EC8D00CB48DD /* SBIconRot2.png */; };
+		1DCF3EE713D5EC8D00CB48DD /* TBIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DCF3EE013D5EC8D00CB48DD /* TBIcon.png */; };
+		1DCF3EE813D5EC8D00CB48DD /* TBIconAlt.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DCF3EE113D5EC8D00CB48DD /* TBIconAlt.png */; };
 		1DE224B113D5E3CA008E2CAA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DE224B013D5E3CA008E2CAA /* Cocoa.framework */; };
 		1DE224BB13D5E3CA008E2CAA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1DE224B913D5E3CA008E2CAA /* InfoPlist.strings */; };
 		1DE224BE13D5E3CA008E2CAA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE224BD13D5E3CA008E2CAA /* main.m */; };
@@ -53,6 +60,13 @@
 		1DCF3ED413D5EA6100CB48DD /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		1DCF3ED613D5EA7A00CB48DD /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = ../../Growl/Frameworks/Growl.framework; sourceTree = "<group>"; };
 		1DCF3EDA13D5EB5200CB48DD /* NicoLiveAlertDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NicoLiveAlertDefinitions.h; sourceTree = "<group>"; };
+		1DCF3EDB13D5EC8D00CB48DD /* SBIconHaveProg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SBIconHaveProg.png; path = Images/SBIconHaveProg.png; sourceTree = "<group>"; };
+		1DCF3EDC13D5EC8D00CB48DD /* SBIconNoProg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SBIconNoProg.png; path = Images/SBIconNoProg.png; sourceTree = "<group>"; };
+		1DCF3EDD13D5EC8D00CB48DD /* SBIconProgAlt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SBIconProgAlt.png; path = Images/SBIconProgAlt.png; sourceTree = "<group>"; };
+		1DCF3EDE13D5EC8D00CB48DD /* SBIconRot1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SBIconRot1.png; path = Images/SBIconRot1.png; sourceTree = "<group>"; };
+		1DCF3EDF13D5EC8D00CB48DD /* SBIconRot2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SBIconRot2.png; path = Images/SBIconRot2.png; sourceTree = "<group>"; };
+		1DCF3EE013D5EC8D00CB48DD /* TBIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TBIcon.png; path = Images/TBIcon.png; sourceTree = "<group>"; };
+		1DCF3EE113D5EC8D00CB48DD /* TBIconAlt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TBIconAlt.png; path = Images/TBIconAlt.png; sourceTree = "<group>"; };
 		1DE224AC13D5E3CA008E2CAA /* NicoLiveAlert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NicoLiveAlert.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DE224B013D5E3CA008E2CAA /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		1DE224B313D5E3CA008E2CAA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -114,6 +128,13 @@
 		1DCF3EC013D5E52200CB48DD /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				1DCF3EDB13D5EC8D00CB48DD /* SBIconHaveProg.png */,
+				1DCF3EDC13D5EC8D00CB48DD /* SBIconNoProg.png */,
+				1DCF3EDD13D5EC8D00CB48DD /* SBIconProgAlt.png */,
+				1DCF3EDE13D5EC8D00CB48DD /* SBIconRot1.png */,
+				1DCF3EDF13D5EC8D00CB48DD /* SBIconRot2.png */,
+				1DCF3EE013D5EC8D00CB48DD /* TBIcon.png */,
+				1DCF3EE113D5EC8D00CB48DD /* TBIconAlt.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -250,6 +271,13 @@
 				1DE224BB13D5E3CA008E2CAA /* InfoPlist.strings in Resources */,
 				1DE224C113D5E3CA008E2CAA /* Credits.rtf in Resources */,
 				1DE224C713D5E3CB008E2CAA /* MainMenu.xib in Resources */,
+				1DCF3EE213D5EC8D00CB48DD /* SBIconHaveProg.png in Resources */,
+				1DCF3EE313D5EC8D00CB48DD /* SBIconNoProg.png in Resources */,
+				1DCF3EE413D5EC8D00CB48DD /* SBIconProgAlt.png in Resources */,
+				1DCF3EE513D5EC8D00CB48DD /* SBIconRot1.png in Resources */,
+				1DCF3EE613D5EC8D00CB48DD /* SBIconRot2.png in Resources */,
+				1DCF3EE713D5EC8D00CB48DD /* TBIcon.png in Resources */,
+				1DCF3EE813D5EC8D00CB48DD /* TBIconAlt.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,7 +375,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NicoLiveAlert/NicoLiveAlert-Prefix.pch";
 				INFOPLIST_FILE = "NicoLiveAlert/NicoLiveAlert-Info.plist";
+				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.6;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -366,7 +396,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NicoLiveAlert/NicoLiveAlert-Prefix.pch";
 				INFOPLIST_FILE = "NicoLiveAlert/NicoLiveAlert-Info.plist";
+				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.6;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
