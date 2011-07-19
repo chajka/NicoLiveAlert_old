@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1DCF3EC413D5E61000CB48DD /* NicoLive.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF3EC313D5E61000CB48DD /* NicoLive.m */; };
 		1DE224B113D5E3CA008E2CAA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DE224B013D5E3CA008E2CAA /* Cocoa.framework */; };
 		1DE224BB13D5E3CA008E2CAA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1DE224B913D5E3CA008E2CAA /* InfoPlist.strings */; };
 		1DE224BE13D5E3CA008E2CAA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE224BD13D5E3CA008E2CAA /* main.m */; };
@@ -16,17 +17,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1DCF3EC213D5E61000CB48DD /* NicoLive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NicoLive.h; path = NicoLive/NicoLive.h; sourceTree = "<group>"; };
+		1DCF3EC313D5E61000CB48DD /* NicoLive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NicoLive.m; path = NicoLive/NicoLive.m; sourceTree = "<group>"; };
 		1DE224AC13D5E3CA008E2CAA /* NicoLiveAlert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NicoLiveAlert.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DE224B013D5E3CA008E2CAA /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		1DE224B313D5E3CA008E2CAA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		1DE224B413D5E3CA008E2CAA /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		1DE224B513D5E3CA008E2CAA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		1DE224B813D5E3CA008E2CAA /* NicoLiveAlert-Info.plist */ = {isa = PBXFileReference; path = "NicoLiveAlert-Info.plist"; sourceTree = "<group>"; };
+		1DE224B813D5E3CA008E2CAA /* NicoLiveAlert-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NicoLiveAlert-Info.plist"; sourceTree = "<group>"; };
 		1DE224BA13D5E3CA008E2CAA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		1DE224BC13D5E3CA008E2CAA /* NicoLiveAlert-Prefix.pch */ = {isa = PBXFileReference; path = "NicoLiveAlert-Prefix.pch"; sourceTree = "<group>"; };
+		1DE224BC13D5E3CA008E2CAA /* NicoLiveAlert-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NicoLiveAlert-Prefix.pch"; sourceTree = "<group>"; };
 		1DE224BD13D5E3CA008E2CAA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1DE224C013D5E3CA008E2CAA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		1DE224C213D5E3CA008E2CAA /* NicoLiveAlertAppDelegate.h */ = {isa = PBXFileReference; path = NicoLiveAlertAppDelegate.h; sourceTree = "<group>"; };
+		1DE224C213D5E3CA008E2CAA /* NicoLiveAlertAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NicoLiveAlertAppDelegate.h; sourceTree = "<group>"; };
 		1DE224C313D5E3CA008E2CAA /* NicoLiveAlertAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NicoLiveAlertAppDelegate.m; sourceTree = "<group>"; };
 		1DE224C613D5E3CB008E2CAA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -43,6 +46,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1DCF3EB413D5E4AF00CB48DD /* NicoLive */ = {
+			isa = PBXGroup;
+			children = (
+				1DCF3EC213D5E61000CB48DD /* NicoLive.h */,
+				1DCF3EC313D5E61000CB48DD /* NicoLive.m */,
+			);
+			name = NicoLive;
+			sourceTree = "<group>";
+		};
+		1DCF3EBE13D5E4EF00CB48DD /* Security */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Security;
+			sourceTree = "<group>";
+		};
+		1DCF3EBF13D5E50800CB48DD /* RegexKitLite */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = RegexKitLite;
+			sourceTree = "<group>";
+		};
+		1DCF3EC013D5E52200CB48DD /* Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		1DCF3EC113D5E5AD00CB48DD /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
 		1DE224A113D5E3CA008E2CAA = {
 			isa = PBXGroup;
 			children = (
@@ -82,10 +122,15 @@
 		1DE224B613D5E3CA008E2CAA /* NicoLiveAlert */ = {
 			isa = PBXGroup;
 			children = (
+				1DCF3EB413D5E4AF00CB48DD /* NicoLive */,
+				1DCF3EC113D5E5AD00CB48DD /* Networking */,
+				1DCF3EBE13D5E4EF00CB48DD /* Security */,
+				1DCF3EBF13D5E50800CB48DD /* RegexKitLite */,
 				1DE224C213D5E3CA008E2CAA /* NicoLiveAlertAppDelegate.h */,
 				1DE224C313D5E3CA008E2CAA /* NicoLiveAlertAppDelegate.m */,
 				1DE224C513D5E3CB008E2CAA /* MainMenu.xib */,
 				1DE224B713D5E3CA008E2CAA /* Supporting Files */,
+				1DCF3EC013D5E52200CB48DD /* Images */,
 			);
 			path = NicoLiveAlert;
 			sourceTree = "<group>";
@@ -167,6 +212,7 @@
 			files = (
 				1DE224BE13D5E3CA008E2CAA /* main.m in Sources */,
 				1DE224C413D5E3CA008E2CAA /* NicoLiveAlertAppDelegate.m in Sources */,
+				1DCF3EC413D5E61000CB48DD /* NicoLive.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +327,7 @@
 				1DE224CC13D5E3CB008E2CAA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
