@@ -10,6 +10,7 @@
 		1DCF3EC413D5E61000CB48DD /* NicoLive.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF3EC313D5E61000CB48DD /* NicoLive.m */; };
 		1DCF3EC713D5E66200CB48DD /* SFKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF3EC613D5E66200CB48DD /* SFKeychain.m */; };
 		1DCF3ECA13D5E69F00CB48DD /* HTTPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF3EC913D5E69F00CB48DD /* HTTPConnection.m */; };
+		1DCF3ECD13D5E6CB00CB48DD /* SocketConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF3ECC13D5E6CB00CB48DD /* SocketConnection.m */; };
 		1DE224B113D5E3CA008E2CAA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DE224B013D5E3CA008E2CAA /* Cocoa.framework */; };
 		1DE224BB13D5E3CA008E2CAA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1DE224B913D5E3CA008E2CAA /* InfoPlist.strings */; };
 		1DE224BE13D5E3CA008E2CAA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE224BD13D5E3CA008E2CAA /* main.m */; };
@@ -25,6 +26,8 @@
 		1DCF3EC613D5E66200CB48DD /* SFKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SFKeychain.m; path = Security/SFKeychain.m; sourceTree = "<group>"; };
 		1DCF3EC813D5E69F00CB48DD /* HTTPConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTTPConnection.h; path = Networking/HTTPConnection.h; sourceTree = "<group>"; };
 		1DCF3EC913D5E69F00CB48DD /* HTTPConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTTPConnection.m; path = Networking/HTTPConnection.m; sourceTree = "<group>"; };
+		1DCF3ECB13D5E6CB00CB48DD /* SocketConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SocketConnection.h; path = Networking/SocketConnection.h; sourceTree = "<group>"; };
+		1DCF3ECC13D5E6CB00CB48DD /* SocketConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SocketConnection.m; path = Networking/SocketConnection.m; sourceTree = "<group>"; };
 		1DE224AC13D5E3CA008E2CAA /* NicoLiveAlert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NicoLiveAlert.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DE224B013D5E3CA008E2CAA /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		1DE224B313D5E3CA008E2CAA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -89,6 +92,8 @@
 			children = (
 				1DCF3EC813D5E69F00CB48DD /* HTTPConnection.h */,
 				1DCF3EC913D5E69F00CB48DD /* HTTPConnection.m */,
+				1DCF3ECB13D5E6CB00CB48DD /* SocketConnection.h */,
+				1DCF3ECC13D5E6CB00CB48DD /* SocketConnection.m */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
@@ -225,6 +230,7 @@
 				1DCF3EC413D5E61000CB48DD /* NicoLive.m in Sources */,
 				1DCF3EC713D5E66200CB48DD /* SFKeychain.m in Sources */,
 				1DCF3ECA13D5E69F00CB48DD /* HTTPConnection.m in Sources */,
+				1DCF3ECD13D5E6CB00CB48DD /* SocketConnection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
