@@ -11,7 +11,11 @@
 
 @interface HTTPConnection : NSObject {
 @private
-    
+  NSMutableDictionary *cookies;
 }
-
+- (id) init;
+- (NSString *) httpSource:(NSURL *)url;
+- (NSData *) httpData:(NSURL *)url;
+- (NSURLConnection *) httpDataAsync:(NSURL *)url delegate:(id)target;
+- (NSData *) postMessage:(NSString *)message ToURL:(NSURL *)url;
 @end
