@@ -89,19 +89,72 @@
 #pragma mark action
 - (IBAction) loginToNico:(id)sender
 {
+    // notify Trying login
+  [labelLoginStatus setStringValue:LoginProgress];
+  	// check loginable & login
+  NSString *loginID = [txtboxLoginID stringValue];
+  NSString *loginPW = [txtboxPassword stringValue];
+  BOOL success;
+  if (([loginID isEqualToString:@""] == NO) && ([loginPW isEqualToString:@""] == NO))
+    success = [nico login:loginID password:loginPW];
+  if (success == YES)
+  {		// update keychain
+    if ([SFKeychain checkForExistanceOfKeychainItem:ItemName withItemKind:ItemKind forUsername:loginID])
+      [SFKeychain modifyKeychainItem:ItemName withItemKind:ItemKind forUsername:loginID withNewPassword:loginPW];
+    else
+      [SFKeychain addKeychainItem:ItemName withItemKind:ItemKind forUsername:loginID withPassword:loginPW];
+      // notify login success
+    [labelLoginStatus setStringValue:LoginDone];
+    NSImage *img = [NSImage imageNamed:@"NicoLiveAlert"];
+    [nico loginResult:@"NicoLiveAlert" message:LoginDone withImage:img];
+    [[menuStatusBar itemWithTag:MenuLogin] setTitle:TitleLoginDone];
+  }
+  else
+  {		// notify fail to user
+    NSImage *img = [NSImage imageNamed:@"NicoLiveAlert"];
+    [nico loginResult:@"NicoLiveAlert" message:LoginFail withImage:img];
+    [labelLoginStatus setStringValue:LoginFail];
+    [[menuStatusBar itemWithTag:MenuLogin] setTitle:TitleUnLogin];
+  }
+    // append manual watch list
+  [nico addManualWatchList:[arrayWatchlist arrangedObjects]];
+    // start fetch program
+  [nico startMonitorProgram];
 }// end - (IBAction) loginToNico:(id)sender
 
 - (IBAction) addItemToWatchlist:(id)sender
 {
+  NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithCapacity:4];
+  [dict setObject:[txtboxCommunityNo stringValue] forKey:KeyCommunity];
+  [dict setObject:[NSNumber numberWithBool:NO] forKey:KeyAutoOpen];
+  [dict setObject:[txtboxNote stringValue] forKey:KeyComment];
+  [arrayWatchlist addObject:dict];
+  [tableWatchList reloadData];
+  [nico addSingleWatchList:[txtboxCommunityNo stringValue]];
 }// end - (IBAction) addItemToWatchlist:(id)sender
 
 - (IBAction) removeSelectedItem:(id)sender
 {
+  NSInteger row = [tableWatchList selectedRow];
+  if (row == -1)
+    return;
+  
+  NSDictionary *watchDict = [[arrayWatchlist arrangedObjects] objectAtIndex:row];
+  NSString *watch = [watchDict objectForKey:KeyCommunity];
+  [nico removeSingleWatchList:watch];
+  [arrayWatchlist removeObjectAtArrangedObjectIndex:row];
 }// end - (IBAction) removeSelectedItem:(id)sender
 
 - (IBAction) checkClicked:(id)sender
 {
 }// end - (IBAction) checkClicked:(id)sender
+
+- (IBAction) openProgram:(id)sender
+{
+  NSURL *url = [sender representedObject];
+  NSWorkspace *ws = [NSWorkspace sharedWorkspace];
+  [ws openURL:url];
+}// end - (IBAction) openProgram:(id)sender
 
 #pragma mark -
 #pragma mark internal

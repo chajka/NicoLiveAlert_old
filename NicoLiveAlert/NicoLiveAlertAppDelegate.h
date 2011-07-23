@@ -36,5 +36,5 @@
 - (IBAction) addItemToWatchlist:(id)sender;
 - (IBAction) removeSelectedItem:(id)sender;
 - (IBAction) checkClicked:(id)sender;
-
+- (IBAction) openProgram:(id)sender;
 @end
