@@ -79,6 +79,7 @@
 - (void) applicationWillTerminate:(NSNotification *)notification
 {
   [cleaner invalidate];
+  [nico monitorProgramEnd];
   NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
   NSArray *ary = [arrayWatchlist arrangedObjects];
   NSData *data = [NSArchiver archivedDataWithRootObject:ary];

@@ -1688,6 +1688,7 @@
 							<string key="NSFrame">{{243, 18}, {64, 19}}</string>
 							<reference key="NSSuperview" ref="435432775"/>
 							<reference key="NSWindow"/>
+							<reference key="NSNextKeyView"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="712300564">
 								<int key="NSCellFlags">-2080244224</int>
@@ -1741,7 +1742,7 @@
 											<string key="NSFrameSize">{270, 256}</string>
 											<reference key="NSSuperview" ref="618032800"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="632345224"/>
+											<reference key="NSNextKeyView" ref="278391436"/>
 											<bool key="NSEnabled">YES</bool>
 											<object class="NSTableHeaderView" key="NSHeaderView" id="95385603">
 												<reference key="NSNextResponder" ref="949834195"/>
@@ -1817,7 +1818,7 @@
 													<object class="NSTableHeaderCell" key="NSHeaderCell">
 														<int key="NSCellFlags">75628096</int>
 														<int key="NSCellFlags2">2048</int>
-														<string key="NSContents"/>
+														<string key="NSContents">✔</string>
 														<reference key="NSSupport" ref="759467412"/>
 														<reference key="NSBackgroundColor" ref="867426417"/>
 														<reference key="NSTextColor" ref="214575689"/>
@@ -1953,7 +1954,7 @@
 							<string key="NSFrame">{{20, 100}, {287, 274}}</string>
 							<reference key="NSSuperview" ref="435432775"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="618032800"/>
+							<reference key="NSNextKeyView" ref="632345224"/>
 							<int key="NSsFlags">133138</int>
 							<reference key="NSVScroller" ref="278391436"/>
 							<reference key="NSHScroller" ref="632345224"/>
@@ -2415,14 +2416,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
-						<string key="label">terminate:</string>
-						<reference key="source" ref="1050"/>
-						<reference key="destination" ref="632727374"/>
-					</object>
-					<int key="connectionID">449</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
 						<string key="label">toggleAutomaticSpellingCorrection:</string>
 						<reference key="source" ref="1014"/>
 						<reference key="destination" ref="795346622"/>
@@ -2740,6 +2733,62 @@
 						<reference key="destination" ref="789060264"/>
 					</object>
 					<int key="connectionID">597</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">loginToNico:</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="1046441943"/>
+					</object>
+					<int key="connectionID">598</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">makeKeyAndOrderFront:</string>
+						<reference key="source" ref="789060264"/>
+						<reference key="destination" ref="443495010"/>
+					</object>
+					<int key="connectionID">599</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">terminate:</string>
+						<reference key="source" ref="1014"/>
+						<reference key="destination" ref="588832536"/>
+					</object>
+					<int key="connectionID">601</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: values.AutoOpenCheckedLive</string>
+						<reference key="source" ref="62627422"/>
+						<reference key="destination" ref="1019783317"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="62627422"/>
+							<reference key="NSDestination" ref="1019783317"/>
+							<string key="NSLabel">value: values.AutoOpenCheckedLive</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">values.AutoOpenCheckedLive</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">602</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: values.UserAccount</string>
+						<reference key="source" ref="520094265"/>
+						<reference key="destination" ref="1019783317"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="520094265"/>
+							<reference key="NSDestination" ref="1019783317"/>
+							<string key="NSLabel">value: values.UserAccount</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">values.UserAccount</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">604</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -4557,7 +4606,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">597</int>
+			<int key="maxID">604</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -4639,10 +4688,12 @@
 							<string>addItemToWatchlist:</string>
 							<string>checkClicked:</string>
 							<string>loginToNico:</string>
+							<string>openProgram:</string>
 							<string>removeSelectedItem:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
@@ -4656,6 +4707,7 @@
 							<string>addItemToWatchlist:</string>
 							<string>checkClicked:</string>
 							<string>loginToNico:</string>
+							<string>openProgram:</string>
 							<string>removeSelectedItem:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
@@ -4670,6 +4722,10 @@
 							</object>
 							<object class="IBActionInfo">
 								<string key="name">loginToNico:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">openProgram:</string>
 								<string key="candidateClassName">id</string>
 							</object>
 							<object class="IBActionInfo">

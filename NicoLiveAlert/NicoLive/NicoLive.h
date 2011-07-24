@@ -10,9 +10,10 @@
 #import "HTTPConnection.h"
 #import "SocketConnection.h"
 #import	"NicoLiveProgram.h"
+#import "Growl.h"
 
 
-@interface NicoLive : NSObject {
+@interface NicoLive : NSObject <GrowlApplicationBridgeDelegate> {
 @private
   	// my joined communities storage
   NSMutableDictionary *communities;
@@ -32,6 +33,7 @@
   	// status bar
   NSStatusItem *statusIcon;
   NSMenu *statusMenu;
+	NSMenu *programMenu;
   NSTimer *statusIconTimer;
   BOOL iconTimerStatus;
   	// for asyncronus rss retrieve
@@ -46,9 +48,19 @@
 }
 @property (assign, readwrite) NSStatusItem *statusIcon;
 @property (assign, readwrite) NSMenu *programMenu;
-	//
+	// constructer
 - (id) init;
-  //
-  //
+  // public method
+- (BOOL) login:(NSString *)loginID password:(NSString *)password;
+- (void) startMonitorProgram;
+- (void) monitorProgramEnd;
+- (void) addSingleWatchList:(NSString *)watch;
+- (void) removeSingleWatchList:(NSString *)watch;
+- (void) addManualWatchList:(NSArray *)programs;
+- (void) rejectEndedProgram;
+  // async url connection for rss search
 - (void) startMakeAllRSSAsync;
+	// Growling
+- (void) newLive:(NSString *)title description:(NSString *)desc withImage:(NSImage *)image url:(NSString *)url;
+- (void) loginResult:(NSString *)title message:(NSString *)message withImage:(NSImage *)image;
 @end
