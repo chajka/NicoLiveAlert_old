@@ -8,6 +8,7 @@
 
 #import "NicoLive.h"
 #import "NicoLiveAlertDefinitions.h"
+#import "Growl.h"
 
 
 @interface NicoLive ()
@@ -23,18 +24,41 @@
 @synthesize statusIcon, programMenu;
 - (id)init
 {
-    self = [super init];
-    if (self)
-    {
-        // Initialization code here.
-    }
-    
-    return self;
+  self = [super init];
+  if (self)
+  {
+    communities = [[NSMutableDictionary alloc] initWithCapacity:16];
+    activePrograms = [[NSMutableDictionary alloc] initWithCapacity:16];
+    recieveQueue = [[NSMutableArray alloc] initWithCapacity:8];
+    serverAddr = nil;
+    serverPort = -1;
+    serverThread = nil;
+    http = [[HTTPConnection alloc] init];
+    sock = [[SocketConnection alloc] initWithRecieveQueue:recieveQueue];
+    rss = nil;
+    pageCount = 0;
+    currentPage = 0;
+    firstTime = YES;
+    rssData = nil;
+    AllRSSs = nil;
+    lastTopCache = nil;
+    [GrowlApplicationBridge setGrowlDelegate:self];
+  }
+
+  return self;
 }
 
 - (void)dealloc
 {
-    [super dealloc];
+  [communities release];
+  [activePrograms release];
+  [recieveQueue release];
+  [serverAddr release];
+  [serverThread release];
+  [rss release];
+  [http release];
+  [sock release];
+  [super dealloc];
 }
 
 

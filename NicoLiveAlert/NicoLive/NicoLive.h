@@ -27,6 +27,8 @@
   	// httpConnection class
   HTTPConnection *http;
   SocketConnection *sock;
+  	// Current All RSS Feed
+  NSXMLDocument *rss;
   	// status bar
   NSStatusItem *statusIcon;
   NSMenu *statusMenu;
