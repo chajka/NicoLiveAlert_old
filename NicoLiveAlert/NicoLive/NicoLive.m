@@ -252,23 +252,25 @@
       [self rejectEndedProgram];
       return;
     }
+    	// check already opend
+    NSString *liveNo = [node stringValue];
+    if ([activePrograms objectForKey:liveNo] != nil)
+    {// yes alredy open skip this RSS
+      continue;
+    }
       // check lv#
 #ifdef DEBUG
     NSLog(@"checking %@", [node stringValue]);
 #endif
-    NSString *liveNo = [node stringValue];
     autoOpen = [communities objectForKey:liveNo];
     if (autoOpen != nil)
-    {// check program is already opend?
-      if ([activePrograms objectForKey:liveNo] == nil)
-      {// notify program
-        [self foundNewLiveInRSS:[node parent]];
-        if ([autoOpen boolValue] == YES)
-        {
-          NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:ProgramURL, [node stringValue]]];
-          [self openURL:url];
-        }// end if autoOpen
-      }// end if alredy open live
+    {// notify program
+      [self foundNewLiveInRSS:[node parent]];
+      if ([autoOpen boolValue] == YES)
+      {
+        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:ProgramURL, [node stringValue]]];
+        [self openURL:url];
+      }// end if autoOpen
     }// endif found live (by lv#)
 
       // check co#
@@ -281,24 +283,21 @@
     {
       autoOpen = [communities objectForKey:[[commus objectAtIndex:0] stringValue]];
       if (autoOpen != nil)
-      {// check program is already opend?
-        if ([activePrograms objectForKey:liveNo] == nil)
-        {// notify program
+      {// notify program
 #ifdef DEBUG
-          NSLog(@"%@", [parent stringValue]);
+        NSLog(@"%@", [parent stringValue]);
 #endif
-          [self foundNewLiveInRSS:parent];
-          if ([autoOpen boolValue] == YES)
-          {
-            NSArray *lives = [parent nodesForXPath:ItemLvIDXPath error:&err];
-            NSURL *url;
-            if ([lives count] >= 1)	// open by live no
-              url = [NSURL URLWithString:[NSString stringWithFormat:ProgramURL, [[lives objectAtIndex:0] stringValue]]];
-            else	// open by community no
-              url = [NSURL URLWithString:[NSString stringWithFormat:ProgramURL, [[commus objectAtIndex:0] stringValue]]];
-            [self openURL:url];
-          }
-        }// end if this program is not open currentry
+        [self foundNewLiveInRSS:parent];
+        if ([autoOpen boolValue] == YES)
+        {
+          NSArray *lives = [parent nodesForXPath:ItemLvIDXPath error:&err];
+          NSURL *url;
+          if ([lives count] >= 1)	// open by live no
+            url = [NSURL URLWithString:[NSString stringWithFormat:ProgramURL, [[lives objectAtIndex:0] stringValue]]];
+          else	// open by community no
+            url = [NSURL URLWithString:[NSString stringWithFormat:ProgramURL, [[commus objectAtIndex:0] stringValue]]];
+          [self openURL:url];
+        }
       }// end if found live (by co#)
     }
   }// end foreach current RSS nodes
