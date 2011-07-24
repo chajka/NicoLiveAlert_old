@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D2CF09113DBEB90005D4262 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D2CF09013DBEB90005D4262 /* Growl.framework */; };
 		1DCF3EC413D5E61000CB48DD /* NicoLive.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF3EC313D5E61000CB48DD /* NicoLive.m */; };
 		1DCF3EC713D5E66200CB48DD /* SFKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF3EC613D5E66200CB48DD /* SFKeychain.m */; };
 		1DCF3ECA13D5E69F00CB48DD /* HTTPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF3EC913D5E69F00CB48DD /* HTTPConnection.m */; };
@@ -14,8 +15,6 @@
 		1DCF3ED013D5E70100CB48DD /* NicoLiveProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF3ECF13D5E70100CB48DD /* NicoLiveProgram.m */; };
 		1DCF3ED313D5E74B00CB48DD /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF3ED213D5E74B00CB48DD /* RegexKitLite.m */; };
 		1DCF3ED513D5EA6100CB48DD /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DCF3ED413D5EA6100CB48DD /* Security.framework */; };
-		1DCF3ED713D5EA7A00CB48DD /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DCF3ED613D5EA7A00CB48DD /* Growl.framework */; };
-		1DCF3ED913D5EACA00CB48DD /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1DCF3ED613D5EA7A00CB48DD /* Growl.framework */; };
 		1DCF3EE213D5EC8D00CB48DD /* SBIconHaveProg.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DCF3EDB13D5EC8D00CB48DD /* SBIconHaveProg.png */; };
 		1DCF3EE313D5EC8D00CB48DD /* SBIconNoProg.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DCF3EDC13D5EC8D00CB48DD /* SBIconNoProg.png */; };
 		1DCF3EE413D5EC8D00CB48DD /* SBIconProgAlt.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DCF3EDD13D5EC8D00CB48DD /* SBIconProgAlt.png */; };
@@ -31,6 +30,8 @@
 		1DE224C713D5E3CB008E2CAA /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DE224C513D5E3CB008E2CAA /* MainMenu.xib */; };
 		1DE28E8E13D6172F0004E82E /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = 1DE28E8C13D6172F0004E82E /* Growl Registration Ticket.growlRegDict */; };
 		1DE28E8F13D6172F0004E82E /* UserDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1DE28E8D13D6172F0004E82E /* UserDefaults.plist */; };
+		1DE28E9613D619B40004E82E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1DE28E9413D619B40004E82E /* Localizable.strings */; };
+		1DE28E9813D619C50004E82E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1DE28E9413D619B40004E82E /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,13 +41,13 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				1DCF3ED913D5EACA00CB48DD /* Growl.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1D2CF09013DBEB90005D4262 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = ../Growl/Frameworks/Growl.framework; sourceTree = "<group>"; };
 		1DCF3EC213D5E61000CB48DD /* NicoLive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NicoLive.h; path = NicoLive/NicoLive.h; sourceTree = "<group>"; };
 		1DCF3EC313D5E61000CB48DD /* NicoLive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NicoLive.m; path = NicoLive/NicoLive.m; sourceTree = "<group>"; };
 		1DCF3EC513D5E66200CB48DD /* SFKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SFKeychain.h; path = Security/SFKeychain.h; sourceTree = "<group>"; };
@@ -60,7 +61,6 @@
 		1DCF3ED113D5E74B00CB48DD /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegexKitLite.h; path = RegexKitLite/RegexKitLite.h; sourceTree = "<group>"; };
 		1DCF3ED213D5E74B00CB48DD /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegexKitLite.m; path = RegexKitLite/RegexKitLite.m; sourceTree = "<group>"; };
 		1DCF3ED413D5EA6100CB48DD /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		1DCF3ED613D5EA7A00CB48DD /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = ../../Growl/Frameworks/Growl.framework; sourceTree = "<group>"; };
 		1DCF3EDA13D5EB5200CB48DD /* NicoLiveAlertDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NicoLiveAlertDefinitions.h; sourceTree = "<group>"; };
 		1DCF3EDB13D5EC8D00CB48DD /* SBIconHaveProg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SBIconHaveProg.png; path = Images/SBIconHaveProg.png; sourceTree = "<group>"; };
 		1DCF3EDC13D5EC8D00CB48DD /* SBIconNoProg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SBIconNoProg.png; path = Images/SBIconNoProg.png; sourceTree = "<group>"; };
@@ -84,6 +84,8 @@
 		1DE224C613D5E3CB008E2CAA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		1DE28E8C13D6172F0004E82E /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
 		1DE28E8D13D6172F0004E82E /* UserDefaults.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = UserDefaults.plist; sourceTree = "<group>"; };
+		1DE28E9513D619B40004E82E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1DE28E9713D619C50004E82E /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +95,7 @@
 			files = (
 				1DE224B113D5E3CA008E2CAA /* Cocoa.framework in Frameworks */,
 				1DCF3ED513D5EA6100CB48DD /* Security.framework in Frameworks */,
-				1DCF3ED713D5EA7A00CB48DD /* Growl.framework in Frameworks */,
+				1D2CF09113DBEB90005D4262 /* Growl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,7 +176,7 @@
 		1DE224AF13D5E3CA008E2CAA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1DCF3ED613D5EA7A00CB48DD /* Growl.framework */,
+				1D2CF09013DBEB90005D4262 /* Growl.framework */,
 				1DE224B013D5E3CA008E2CAA /* Cocoa.framework */,
 				1DE224B213D5E3CA008E2CAA /* Other Frameworks */,
 			);
@@ -203,6 +205,7 @@
 				1DE224C213D5E3CA008E2CAA /* NicoLiveAlertAppDelegate.h */,
 				1DE224C313D5E3CA008E2CAA /* NicoLiveAlertAppDelegate.m */,
 				1DE224C513D5E3CB008E2CAA /* MainMenu.xib */,
+				1DE28E9413D619B40004E82E /* Localizable.strings */,
 				1DE224B713D5E3CA008E2CAA /* Supporting Files */,
 				1DCF3EC013D5E52200CB48DD /* Images */,
 			);
@@ -258,6 +261,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				ja,
 			);
 			mainGroup = 1DE224A113D5E3CA008E2CAA;
 			productRefGroup = 1DE224AD13D5E3CA008E2CAA /* Products */;
@@ -286,6 +290,8 @@
 				1DCF3EE813D5EC8D00CB48DD /* TBIconAlt.png in Resources */,
 				1DE28E8E13D6172F0004E82E /* Growl Registration Ticket.growlRegDict in Resources */,
 				1DE28E8F13D6172F0004E82E /* UserDefaults.plist in Resources */,
+				1DE28E9613D619B40004E82E /* Localizable.strings in Resources */,
+				1DE28E9813D619C50004E82E /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +340,15 @@
 			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
+		1DE28E9413D619B40004E82E /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1DE28E9513D619B40004E82E /* en */,
+				1DE28E9713D619C50004E82E /* ja */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -376,10 +391,11 @@
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../Growl/Frameworks\"",
+					"\"$(SRCROOT)/../Growl/Frameworks\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_ENABLE_OBJC_GC = supported;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NicoLiveAlert/NicoLiveAlert-Prefix.pch";
 				INFOPLIST_FILE = "NicoLiveAlert/NicoLiveAlert-Info.plist";
@@ -398,9 +414,10 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../Growl/Frameworks\"",
+					"\"$(SRCROOT)/../Growl/Frameworks\"",
 				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_ENABLE_OBJC_GC = supported;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NicoLiveAlert/NicoLiveAlert-Prefix.pch";
 				INFOPLIST_FILE = "NicoLiveAlert/NicoLiveAlert-Info.plist";
