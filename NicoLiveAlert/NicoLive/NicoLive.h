@@ -57,6 +57,7 @@
 - (void) addSingleWatchList:(NSString *)watch;
 - (void) removeSingleWatchList:(NSString *)watch;
 - (void) addManualWatchList:(NSArray *)programs;
+- (void) changeAutoOpenStatus:(NSString *)community with:(NSNumber *)isAutoOpen;
 - (void) rejectEndedProgram;
   // async url connection for rss search
 - (void) startMakeAllRSSAsync;

@@ -162,6 +162,11 @@
   }// end foreach wlist
 }// end - (void) addManualWatchList:(NSDictionary *)wlist
 
+- (void) changeAutoOpenStatus:(NSString *)community with:(NSNumber *)isAutoOpen
+{
+  [communities setValue:isAutoOpen forKey:community];
+}// end - (void) changeAutoOpenStatus:(NSString *)community with:(NSNumber *)autoOpen
+
 - (void) rejectEndedProgram
 {
   for (NicoLiveProgram *program in [activePrograms allValues])

@@ -148,6 +148,8 @@
 
 - (IBAction) checkClicked:(id)sender
 {
+  NSDictionary *dict = [[arrayWatchlist arrangedObjects] objectAtIndex:[tableWatchList selectedRow]];
+  [nico changeAutoOpenStatus:[dict objectForKey:@"community"] with:[dict objectForKey:@"autoOpen"]];
 }// end - (IBAction) checkClicked:(id)sender
 
 - (IBAction) openProgram:(id)sender
