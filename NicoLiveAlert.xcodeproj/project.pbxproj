@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D2CF09113DBEB90005D4262 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D2CF09013DBEB90005D4262 /* Growl.framework */; };
+		1D2CF09313DBEEFF005D4262 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D2CF09213DBEEFF005D4262 /* Growl.framework */; };
+		1D2CF09413DC3136005D4262 /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1D2CF09213DBEEFF005D4262 /* Growl.framework */; };
+		1DB9B3CE13DC3CB900CEFBF7 /* NicoLiveAlert.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1DB9B3CD13DC3CB900CEFBF7 /* NicoLiveAlert.icns */; };
 		1DCF3EC413D5E61000CB48DD /* NicoLive.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF3EC313D5E61000CB48DD /* NicoLive.m */; };
 		1DCF3EC713D5E66200CB48DD /* SFKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF3EC613D5E66200CB48DD /* SFKeychain.m */; };
 		1DCF3ECA13D5E69F00CB48DD /* HTTPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF3EC913D5E69F00CB48DD /* HTTPConnection.m */; };
@@ -41,13 +43,15 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				1D2CF09413DC3136005D4262 /* Growl.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1D2CF09013DBEB90005D4262 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = ../Growl/Frameworks/Growl.framework; sourceTree = "<group>"; };
+		1D2CF09213DBEEFF005D4262 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = NicoLiveAlert/Growl.framework; sourceTree = "<group>"; };
+		1DB9B3CD13DC3CB900CEFBF7 /* NicoLiveAlert.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = NicoLiveAlert.icns; sourceTree = SOURCE_ROOT; };
 		1DCF3EC213D5E61000CB48DD /* NicoLive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NicoLive.h; path = NicoLive/NicoLive.h; sourceTree = "<group>"; };
 		1DCF3EC313D5E61000CB48DD /* NicoLive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NicoLive.m; path = NicoLive/NicoLive.m; sourceTree = "<group>"; };
 		1DCF3EC513D5E66200CB48DD /* SFKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SFKeychain.h; path = Security/SFKeychain.h; sourceTree = "<group>"; };
@@ -95,7 +99,7 @@
 			files = (
 				1DE224B113D5E3CA008E2CAA /* Cocoa.framework in Frameworks */,
 				1DCF3ED513D5EA6100CB48DD /* Security.framework in Frameworks */,
-				1D2CF09113DBEB90005D4262 /* Growl.framework in Frameworks */,
+				1D2CF09313DBEEFF005D4262 /* Growl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,6 +138,7 @@
 		1DCF3EC013D5E52200CB48DD /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				1DB9B3CD13DC3CB900CEFBF7 /* NicoLiveAlert.icns */,
 				1DCF3EDB13D5EC8D00CB48DD /* SBIconHaveProg.png */,
 				1DCF3EDC13D5EC8D00CB48DD /* SBIconNoProg.png */,
 				1DCF3EDD13D5EC8D00CB48DD /* SBIconProgAlt.png */,
@@ -176,7 +181,7 @@
 		1DE224AF13D5E3CA008E2CAA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1D2CF09013DBEB90005D4262 /* Growl.framework */,
+				1D2CF09213DBEEFF005D4262 /* Growl.framework */,
 				1DE224B013D5E3CA008E2CAA /* Cocoa.framework */,
 				1DE224B213D5E3CA008E2CAA /* Other Frameworks */,
 			);
@@ -292,6 +297,7 @@
 				1DE28E8F13D6172F0004E82E /* UserDefaults.plist in Resources */,
 				1DE28E9613D619B40004E82E /* Localizable.strings in Resources */,
 				1DE28E9813D619C50004E82E /* Localizable.strings in Resources */,
+				1DB9B3CE13DC3CB900CEFBF7 /* NicoLiveAlert.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,13 +397,14 @@
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../Growl/Frameworks\"",
+					"\"$(SRCROOT)/NicoLiveAlert\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_ENABLE_OBJC_GC = supported;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NicoLiveAlert/NicoLiveAlert-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/NicoLiveAlert/Growl.framework\"/**";
 				INFOPLIST_FILE = "NicoLiveAlert/NicoLiveAlert-Info.plist";
 				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -414,12 +421,13 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../Growl/Frameworks\"",
+					"\"$(SRCROOT)/NicoLiveAlert\"",
 				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_ENABLE_OBJC_GC = supported;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NicoLiveAlert/NicoLiveAlert-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/NicoLiveAlert/Growl.framework\"/**";
 				INFOPLIST_FILE = "NicoLiveAlert/NicoLiveAlert-Info.plist";
 				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_NAME = "$(TARGET_NAME)";
