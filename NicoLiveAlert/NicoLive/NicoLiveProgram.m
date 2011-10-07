@@ -136,6 +136,8 @@
   }
 }// end - (void) parseRSSNode:(NSXMLNode *)rssNode
 
+#pragma mark -
+#pragma mark internal
 - (void) parseStreamInfo:(NSXMLNode *)streamNode
 {
   NSError *err;
@@ -211,7 +213,7 @@
   NSString *urlString = [http httpSource:url];
   NSString *mutch = [urlString stringByMatching:OnAirString options:RKLMultiline inRange:NSMakeRange(0, [urlString length]) capture:0L error:&err];
   if (mutch == nil)
-    liveAlive = NO;
+    [self setLiveAlive:NO];
   else
     liveAlive = YES;
 }// end - (void) checkLiveAlive

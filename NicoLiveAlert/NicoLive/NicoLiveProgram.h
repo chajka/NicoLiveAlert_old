@@ -22,7 +22,7 @@
   NSImage *buffer;
   NSTimer *timer;
 }
-@property (readonly) BOOL liveAlive;
+@property (assign, readwrite) BOOL liveAlive;
 @property (readonly) NSString *title;
 @property (readonly) NSString *description;
 @property (readonly) NSString *liveNo;
