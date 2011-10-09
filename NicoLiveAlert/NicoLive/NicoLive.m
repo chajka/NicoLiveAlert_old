@@ -29,7 +29,7 @@
 @implementation NicoLive
 @synthesize statusIcon, programMenu;
 #pragma mark construct / destruct
-- (id)init
+- (id) init
 {
   self = [super init];
   if (self)
@@ -53,9 +53,9 @@
   }
 
   return self;
-}
+}// end - (id) init
 
-- (void)dealloc
+- (void) dealloc
 {
   [communities release];
   [activePrograms release];
@@ -66,7 +66,7 @@
   [http release];
   [sock release];
   [super dealloc];
-}
+}// end - (void) dealloc
 
 
 #pragma mark -
@@ -192,28 +192,35 @@
   [rssData setData:[http httpData:rssURL]];
   NSError *err;
   NSXMLDocument *xml;
-  xml = [[[NSXMLDocument alloc] initWithData:rssData options:NSXMLDocumentTidyXML error:&err] autorelease];
-  NSXMLElement *root = [xml rootElement];
-  if ([[root name] isEqualToString:@"rss"] == NO)
-    return;
-  NSInteger count = [[[[root nodesForXPath:RSSTotalCountXPath error:&err] objectAtIndex:0] stringValue] integerValue];
-  pageCount = ceilf(count / 18);
+  @try {
+    xml = [[[NSXMLDocument alloc] initWithData:rssData options:NSXMLDocumentTidyXML error:&err] autorelease];
+    NSXMLElement *root = [xml rootElement];
+    if ([[root name] isEqualToString:@"rss"] == NO)
+      return;
+    NSInteger count = [[[[root nodesForXPath:RSSTotalCountXPath error:&err] objectAtIndex:0] stringValue] integerValue];
+    pageCount = ceilf(count / 18);
 #ifdef DEBUG
-  NSLog(@"checklist count is : %ld", [[communities allKeys] count]);
-  for (NSString *chk in [communities allKeys])
-  {
-    NSLog(@"check : `%@`", chk);
-  }
-  NSLog(@"pageCount : %ld", pageCount);
+    NSLog(@"checklist count is : %ld", [[communities allKeys] count]);
+    for (NSString *chk in [communities allKeys])
+    {
+      NSLog(@"check : `%@`", chk);
+    }
+    NSLog(@"pageCount : %ld", pageCount);
 #endif
-  iconTimerStatus = NO;
-    // cleanup previous status icon EyeCandy
-  if ([statusIconTimer isValid] == YES)
-    [statusIconTimer invalidate];
-    // start icon EyeCandy
-  statusIconTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerIconUpdate) userInfo:nil repeats:YES];
-  [statusIconTimer fire];
-  [self connectionDidFinishLoading:nil];
+    iconTimerStatus = NO;
+      // cleanup previous status icon EyeCandy
+    if ([statusIconTimer isValid] == YES)
+      [statusIconTimer invalidate];
+      // start icon EyeCandy
+    statusIconTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerIconUpdate) userInfo:nil repeats:YES];
+    [statusIconTimer fire];
+    [self connectionDidFinishLoading:nil];
+  }
+  @catch (NSException *exception) {
+    NSLog(@"startMakeAllRSSAsync - NicoLive.m cause exception");
+    NSLog(@"%@", [exception name]);
+    NSLog(@"%@", [exception userInfo]);
+  }
 }// end - (void) startMakeAllRSSAsync
 
 #pragma mark -
@@ -238,93 +245,101 @@
 {
   NSError *err;
   NSXMLDocument *xml;
-  xml = [[[NSXMLDocument alloc] initWithData:rssData options:NSXMLDocumentTidyXML error:&err] autorelease];
-  NSXMLElement *root = [xml rootElement];
-  NSArray *nodes = [root nodesForXPath:RSSLiveIDXPath error:&err];
-  NSNumber *autoOpen = nil;
-  NSXMLNode *parent;
-  NSArray *commus;
-  for (NSXMLNode *node in nodes)
-  {
-      // check first lv#
-    if (currentTopCache == nil)
-      currentTopCache = [node stringValue];
-    	// check reach last lv#
-    if ([lastTopCache isEqualToString:[node stringValue]] == YES)
+  @try {
+    xml = [[[NSXMLDocument alloc] initWithData:rssData options:NSXMLDocumentTidyXML error:&err] autorelease];
+    NSXMLElement *root = [xml rootElement];
+    NSArray *nodes = [root nodesForXPath:RSSLiveIDXPath error:&err];
+    NSNumber *autoOpen = nil;
+    NSXMLNode *parent;
+    NSArray *commus;
+    for (NSXMLNode *node in nodes)
     {
+        // check first lv#
+      if (currentTopCache == nil)
+        currentTopCache = [node stringValue];
+        // check reach last lv#
+      if ([lastTopCache isEqualToString:[node stringValue]] == YES)
+      {
+        [statusIconTimer invalidate];
+        [self updateStatusIcon];
+        [self rejectEndedProgram];
+        return;
+      }
+        // check already opend
+      NSString *liveNo = [node stringValue];
+      if ([activePrograms objectForKey:liveNo] != nil)
+      {// yes alredy open skip this RSS
+        continue;
+      }
+        // check lv#
+#ifdef DEBUG
+      NSLog(@"checking %@", [node stringValue]);
+#endif
+      autoOpen = [communities objectForKey:liveNo];
+      if (autoOpen != nil)
+      {// notify program
+        [self foundNewLiveInRSS:[node parent]];
+        if ([autoOpen boolValue] == YES)
+        {
+          NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:ProgramURL, [node stringValue]]];
+          [self openURL:url];
+        }// end if autoOpen
+      }// endif found live (by lv#)
+      
+        // check co#
+      parent = [node parent];
+      commus = [parent nodesForXPath:ItemCommuXPath error:&err];
+#ifdef DEBUG
+      NSLog(@"checking %@", [[commus objectAtIndex:0] stringValue]);
+#endif
+      if ([commus count] == 1)
+      {
+        autoOpen = [communities objectForKey:[[commus objectAtIndex:0] stringValue]];
+        if (autoOpen != nil)
+        {// notify program
+#ifdef DEBUG
+          NSLog(@"%@", [parent stringValue]);
+#endif
+          [self foundNewLiveInRSS:parent];
+          if ([autoOpen boolValue] == YES)
+          {
+            NSArray *lives = [parent nodesForXPath:ItemLvIDXPath error:&err];
+            NSURL *url;
+            if ([lives count] >= 1)	// open by live no
+              url = [NSURL URLWithString:[NSString stringWithFormat:ProgramURL, [[lives objectAtIndex:0] stringValue]]];
+            else	// open by community no
+              url = [NSURL URLWithString:[NSString stringWithFormat:ProgramURL, [[commus objectAtIndex:0] stringValue]]];
+            [self openURL:url];
+          }
+        }// end if found live (by co#)
+      }
+    }// end foreach current RSS nodes
+      // check next rss page
+    if (currentPage++ < pageCount)
+    {
+#ifdef DEBUG
+      NSLog(@"Goto Next RSS Page %ld", currentPage);
+#endif
+      NSURL *rssURL = [NSURL URLWithString:[NSString stringWithFormat:RSSInforURL, @"", currentPage]];
+      connection = [http httpDataAsync:rssURL delegate:self];
+    }
+    else
+    {
+#ifdef DEBUG
+      NSLog(@"All check Done");
+#endif
       [statusIconTimer invalidate];
       [self updateStatusIcon];
       [self rejectEndedProgram];
-      return;
     }
-    	// check already opend
-    NSString *liveNo = [node stringValue];
-    if ([activePrograms objectForKey:liveNo] != nil)
-    {// yes alredy open skip this RSS
-      continue;
-    }
-      // check lv#
-#ifdef DEBUG
-    NSLog(@"checking %@", [node stringValue]);
-#endif
-    autoOpen = [communities objectForKey:liveNo];
-    if (autoOpen != nil)
-    {// notify program
-      [self foundNewLiveInRSS:[node parent]];
-      if ([autoOpen boolValue] == YES)
-      {
-        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:ProgramURL, [node stringValue]]];
-        [self openURL:url];
-      }// end if autoOpen
-    }// endif found live (by lv#)
+  }
+  @catch (NSException *exception) {
+    NSLog(@"connectionDidFinishLoading: - NicoLive.m cause exception");
+    NSLog(@"%@", [exception name]);
+    NSLog(@"%@", [exception userInfo]);
+  }
+}// end - (void)connectionDidFinishLoading:(NSURLConnection *)con
 
-      // check co#
-    parent = [node parent];
-    commus = [parent nodesForXPath:ItemCommuXPath error:&err];
-#ifdef DEBUG
-    NSLog(@"checking %@", [[commus objectAtIndex:0] stringValue]);
-#endif
-    if ([commus count] == 1)
-    {
-      autoOpen = [communities objectForKey:[[commus objectAtIndex:0] stringValue]];
-      if (autoOpen != nil)
-      {// notify program
-#ifdef DEBUG
-        NSLog(@"%@", [parent stringValue]);
-#endif
-        [self foundNewLiveInRSS:parent];
-        if ([autoOpen boolValue] == YES)
-        {
-          NSArray *lives = [parent nodesForXPath:ItemLvIDXPath error:&err];
-          NSURL *url;
-          if ([lives count] >= 1)	// open by live no
-            url = [NSURL URLWithString:[NSString stringWithFormat:ProgramURL, [[lives objectAtIndex:0] stringValue]]];
-          else	// open by community no
-            url = [NSURL URLWithString:[NSString stringWithFormat:ProgramURL, [[commus objectAtIndex:0] stringValue]]];
-          [self openURL:url];
-        }
-      }// end if found live (by co#)
-    }
-  }// end foreach current RSS nodes
-    // check next rss page
-	if (currentPage++ < pageCount)
-  {
-#ifdef DEBUG
-    NSLog(@"Goto Next RSS Page %ld", currentPage);
-#endif
-    NSURL *rssURL = [NSURL URLWithString:[NSString stringWithFormat:RSSInforURL, @"", currentPage]];
-    connection = [http httpDataAsync:rssURL delegate:self];
-  }
-  else
-  {
-#ifdef DEBUG
-    NSLog(@"All check Done");
-#endif
-    [statusIconTimer invalidate];
-    [self updateStatusIcon];
-    [self rejectEndedProgram];
-  }
-}
 
 - (void) abort
 {
@@ -340,7 +355,7 @@
     [rssData release];
     rssData = nil;
   }
-}
+}// end - (void) abort
 
 #pragma mark -
 #pragma mark internal
