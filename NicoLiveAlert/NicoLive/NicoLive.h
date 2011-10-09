@@ -15,6 +15,9 @@
 
 @interface NicoLive : NSObject <GrowlApplicationBridgeDelegate> {
 @private
+    // my status
+  NSString *myUserID;
+  BOOL isPremium;
   	// my joined communities storage
   NSMutableDictionary *communities;
   	// program alive checker
@@ -46,6 +49,7 @@
   NSString *lastTopCache;
   NSString *currentTopCache;
 }
+@property (assign, readwrite) BOOL isPremium;
 @property (assign, readwrite) NSStatusItem *statusIcon;
 @property (assign, readwrite) NSMenu *programMenu;
 	// constructer

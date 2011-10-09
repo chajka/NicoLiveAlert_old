@@ -27,6 +27,7 @@
 @end
 
 @implementation NicoLive
+@synthesize isPremium;
 @synthesize statusIcon, programMenu;
 #pragma mark construct / destruct
 - (id) init
@@ -100,6 +101,12 @@
     return NO;
   
     // ok continue
+    // get myUid
+  resultNode = [[root nodesForXPath:MyUserIDXPath error:&err] objectAtIndex:0];
+  myUserID = [[resultNode stringValue] copy];
+    // cheki I'm premium ?
+  resultNode = [[root nodesForXPath:IsPremiumXPath error:&err] objectAtIndex:0];
+  [self setIsPremium:[[resultNode stringValue] boolValue]];
     // add community & channel to dictionary
   NSArray *channels;
   channels = [root nodesForXPath:MyCommunityXPath error:&err];

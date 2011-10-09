@@ -39,7 +39,7 @@
 
 	// xPath Querys
 #define LoginTicketXPath	@"/nicovideo_user_response/ticket"
-#define MyUIDXPath	@"/getalertstatus/user_id"
+#define MyUserIDXPath	@"/getalertstatus/user_id"
 #define IsPremiumXPath	@"/getalertstatus/is_premium"
 #define MyCommunityXPath	@"/getalertstatus/communities/community_id"
 #define ProgramServerXPath	@"/getalertstatus/ms/addr"
