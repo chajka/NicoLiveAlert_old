@@ -23,7 +23,6 @@
   self = [super init];
   if (self != nil)
   {
-    nico = [[NicoLive alloc] init];
     NSString *udPath;
     NSDictionary *udDict;
     udPath = [[NSBundle mainBundle] pathForResource:@"UserDefaults" ofType:@"plist"];
@@ -36,7 +35,6 @@
 
 - (void) dealloc
 {
-  [nico release];
   [super dealloc];
 }// end - (void) dealloc
 

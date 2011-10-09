@@ -27,10 +27,10 @@
   IBOutlet NSTextField *txtboxCommunityNo;
   IBOutlet NSTextField *txtboxNote;
   	//
-  NicoLive *nico;
+  IBOutlet NicoLive *nico;
+    //
   NSTimer	*cleaner;
 }
-
 @property (assign) IBOutlet NSWindow *window;
 - (IBAction) loginToNico:(id)sender;
 - (IBAction) addItemToWatchlist:(id)sender;
