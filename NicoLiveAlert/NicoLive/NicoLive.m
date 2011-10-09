@@ -35,15 +35,27 @@
   self = [super init];
   if (self)
   {
+      // myStatus
+    myUserID = nil;
+    isPremium = NO;
+    	// my joined communities storage
     communities = [[NSMutableDictionary alloc] initWithCapacity:16];
+      // program alive checker
     activePrograms = [[NSMutableDictionary alloc] initWithCapacity:16];
+      // socket pushed data storage
     recieveQueue = [[NSMutableArray alloc] initWithCapacity:8];
+      // message server information
     serverAddr = nil;
     serverPort = -1;
     serverThread = nil;
+      // httpConnection class
     http = [[HTTPConnection alloc] init];
     sock = [[SocketConnection alloc] initWithRecieveQueue:recieveQueue];
+      // Current All RSS Feed
     rss = nil;
+      // collaboration control
+    broadcasting = NO;
+      // for asyncronus rss retrieve
     pageCount = 0;
     currentPage = 0;
     firstTime = YES;
@@ -384,9 +396,13 @@
 
 - (void) openURL:(NSURL *)url
 {
-  NSWorkspace *ws = [NSWorkspace sharedWorkspace];
-  [ws openURL:url];
-}
+  if ((broadcasting == NO) || ((isPremium == YES) && ([[NSUserDefaults standardUserDefaults] boolForKey:DoNotOpenWhenBroadcasting] == NO)))
+  {
+    NSWorkspace *ws = [NSWorkspace sharedWorkspace];
+    [ws openURL:url];
+  }// end if
+}// end - (void) openURL:(NSURL *)url
+
 - (void) foundNewLive:(NSXMLNode *)node
 {
   NicoLiveProgram *newLive = [[[NicoLiveProgram alloc] initWithStreaminfo:node] autorelease];
@@ -395,7 +411,7 @@
     [activePrograms setValue:newLive forKey:[newLive liveNo]];
     [self notifyNewProgram:newLive];
     [self updateStatusIcon];
-  }
+  }// end if
 }// end - (void) foundNewLive:(NSXMLNode *)node
 
 - (void) foundNewLiveRSS:(NSXMLNode *)node

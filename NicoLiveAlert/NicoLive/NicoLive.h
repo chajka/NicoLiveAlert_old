@@ -39,6 +39,8 @@
 	NSMenu *programMenu;
   NSTimer *statusIconTimer;
   BOOL iconTimerStatus;
+    // collaboration control
+  BOOL broadcasting;
   	// for asyncronus rss retrieve
   BOOL firstTime;
   NSInteger pageCount;
