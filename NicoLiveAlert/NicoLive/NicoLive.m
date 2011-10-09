@@ -106,7 +106,7 @@
   myUserID = [[resultNode stringValue] copy];
     // cheki I'm premium ?
   resultNode = [[root nodesForXPath:IsPremiumXPath error:&err] objectAtIndex:0];
-  [self setIsPremium:[[resultNode stringValue] boolValue]];
+	[self setIsPremium:[[resultNode stringValue] boolValue]];
     // add community & channel to dictionary
   NSArray *channels;
   channels = [root nodesForXPath:MyCommunityXPath error:&err];
