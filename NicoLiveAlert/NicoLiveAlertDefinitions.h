@@ -74,6 +74,8 @@
 #define UserAccount	@"UserAccount"
 #define WatchList	@"WatchList"
 #define AutoOpen	@"AutoOpenCheckedLive"
+#define CollaborateWithFMELauncher	@"CollaborateWithFMELauncher"
+#define DoNotOpenWhenBroadcasting	@"DoNotOpenWhenBroadcasting"
 
 	// resource / dicitonary key constant
 #define KeyCommunity	@"community"

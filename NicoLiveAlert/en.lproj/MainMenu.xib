@@ -3063,6 +3063,38 @@
 					</object>
 					<int key="connectionID">648</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: isPremium</string>
+						<reference key="source" ref="676709401"/>
+						<reference key="destination" ref="831519873"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="676709401"/>
+							<reference key="NSDestination" ref="831519873"/>
+							<string key="NSLabel">enabled: isPremium</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">isPremium</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">649</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: isPremium</string>
+						<reference key="source" ref="531569130"/>
+						<reference key="destination" ref="831519873"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="531569130"/>
+							<reference key="NSDestination" ref="831519873"/>
+							<string key="NSLabel">enabled: isPremium</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">isPremium</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">650</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -4939,7 +4971,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">648</int>
+			<int key="maxID">650</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
