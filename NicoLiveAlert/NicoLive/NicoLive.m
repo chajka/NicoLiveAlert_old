@@ -592,23 +592,30 @@
     if (needNotify == YES)
     {
       NSError *err;
-      NSString *live = [program objectAtIndex:0];
+      NSString *live = [program objectAtIndex:OffsetLiveNo];
       NSString *streamURLStr = [NSString stringWithFormat:StreamInforAPIURL, live];
       NSURL *streamURL = [NSURL URLWithString:streamURLStr];
       NSData *streamData = [[http httpData:streamURL] autorelease];
-      NSXMLDocument *xml = [[NSXMLDocument alloc] initWithData:streamData options:NSXMLDocumentTidyXML error:&err];
-      NSXMLElement *root = [xml rootElement];
-      [self performSelector:@selector(foundNewLive:) onThread:[NSThread mainThread] withObject:root waitUntilDone:YES];
-      [xml release];
-      if (autoOpen == YES)
-      {
-        NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-        if ([ud boolForKey:AutoOpen] == YES)
+      @try {
+        NSXMLDocument *xml = [[NSXMLDocument alloc] initWithData:streamData options:NSXMLDocumentTidyXML error:&err];
+        NSXMLElement *root = [xml rootElement];
+        [self performSelector:@selector(foundNewLive:) onThread:[NSThread mainThread] withObject:root waitUntilDone:YES];
+        [xml release];
+        if (autoOpen == YES)
         {
-          NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:ProgramURL, live]];
-          [self openURL:url];
-        }// if Auto open == YES
-      }// end if check auto open
+          NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+          if ([ud boolForKey:AutoOpen] == YES)
+          {
+            NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:ProgramURL, live]];
+            [self openURL:url];
+          }// if Auto open == YES
+        }// end if check auto open
+      }
+      @catch (NSException *exception) {
+        NSLog(@"Notify caused exception");
+        NSLog(@"%@", [exception name]);
+        NSLog(@"%@", [exception userInfo]);
+      }
     }// end if Need Notify
   }// end if string is program information
   [program release];

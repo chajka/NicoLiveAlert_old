@@ -14,6 +14,10 @@
 #define EmbedURL	@"http://live.nicovideo.jp/embed/%@"
 #define RSSInforURL	@"http://live.nicovideo.jp/recent/rss?%@p=%d"
 #define ProgramURL	@"http://live.nicovideo.jp/watch/%@"
+	// stream offset
+#define OffsetLiveNo	(0)
+#define OffsetCommunity	(1)
+#define OffsetUserID	(2)
 	// RSS category
 #define	CatTitleCommon	@"一般(その他)"
 #define CatTitlePolitics		@"政治"
