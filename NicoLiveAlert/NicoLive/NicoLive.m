@@ -16,6 +16,9 @@
 - (void) notifyNewProgram:(NicoLiveProgram *)live;
 - (void) foundNewLiveInSocket:(NSXMLNode *)node;
 - (void) foundNewLiveInRSS:(NSXMLNode *)node;
+  // Other application collaboration
+- (void) startFMLE:(NSString *)live;
+- (void) stopFMLE;
   // Async URL Connection Delegate
 - (void) connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response;
 - (void) connection:(NSURLConnection *)connection didReceiveData:(NSData *)data;
@@ -459,6 +462,19 @@
     [self updateStatusIcon];
   }
 }// end - (void) foundNewLive:(NSXMLNode *)node
+
+#pragma mark Other application collaboration
+- (void) startFMLE:(NSString *)live
+{
+  NSDistantObject *fmle = [NSConnection rootProxyForConnectionWithRegisteredName:FMELauncher host:@""];
+  [fmle startFMLE:live];
+}// end - (void) startFMLE:(NSString *)live
+
+- (void) stopFMLE
+{
+  NSDistantObject *fmle = [NSConnection rootProxyForConnectionWithRegisteredName:FMELauncher host:@""];
+  [fmle stopFMLE];
+}// end - (void) stopFMLE
 
 #pragma mark -
 #pragma mark timer

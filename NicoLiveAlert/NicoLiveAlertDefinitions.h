@@ -95,6 +95,9 @@
 #define	ItemName	@"NicoLiveAlert"
 #define	ItemKind	@"Application Password"
 
+	// NSConnection other Application definition
+#define FMELauncher	@"FMELauncher"
+
 	// Localizable strings
 #define LoginProgress	NSLocalizedString(@"LoginProgress", @"")
 #define LoginDone	NSLocalizedString(@"LoginDone", @"")
