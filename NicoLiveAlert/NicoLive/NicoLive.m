@@ -16,6 +16,8 @@
 - (void) notifyNewProgram:(NicoLiveProgram *)live;
 - (void) foundNewLiveInSocket:(NSXMLNode *)node;
 - (void) foundNewLiveInRSS:(NSXMLNode *)node;
+  // notification
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)program change:(NSDictionary *)change context:(void *)context;
   // Other application collaboration
 - (void) startFMLE:(NSString *)live;
 - (void) stopFMLE;
@@ -463,6 +465,20 @@
   }
 }// end - (void) foundNewLive:(NSXMLNode *)node
 
+#pragma mark notification
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)program 
+                        change:(NSDictionary *)change
+                       context:(void *)context
+{
+  if ([keyPath isEqual:@"liveAlive"])
+  {
+    [self stopFMLE];
+    broadcasting = NO;
+    [program removeObserver:self forKeyPath:@"liveAlive"];
+  }// end if
+}// end - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)program change:(NSDictionary *)change context:(void *)context
+
 #pragma mark Other application collaboration
 - (void) startFMLE:(NSString *)live
 {
@@ -601,6 +617,14 @@
         NSXMLElement *root = [xml rootElement];
         [self performSelector:@selector(foundNewLive:) onThread:[NSThread mainThread] withObject:root waitUntilDone:YES];
         [xml release];
+          // check start FMLE
+        if (([[program objectAtIndex:OffsetUserID] isEqualToString:myUserID] == YES) && ([[NSUserDefaults standardUserDefaults] boolForKey:CollaborateWithFMELauncher] == YES))
+        {
+          broadcasting = YES;
+          [self startFMLE:live];
+          NicoLiveProgram *program = [activePrograms objectForKey:live];
+          [program addObserver:self forKeyPath:@"liveAlive" options:NSKeyValueObservingOptionNew context:nil];
+        }// end if CollaborateWithFMELauncher
         if (autoOpen == YES)
         {
           NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
