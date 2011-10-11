@@ -166,7 +166,14 @@
 				{
 					NSString *str = [[sendQueue objectAtIndex:0] retain];
 					[self sendText:str];
-					[sendQueue removeObject:str];
+          @try {
+            [sendQueue removeObject:str];
+          }
+          @catch (NSException *exception) {
+            NSLog(@"stream:handleEvent cased exception");
+            NSLog(@"%@", [exception name]);
+            NSLog(@"%@", [exception userInfo]);
+          }
 					[str release];
 				} // end while
 			}

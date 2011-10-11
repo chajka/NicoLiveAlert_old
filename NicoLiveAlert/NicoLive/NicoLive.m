@@ -561,7 +561,14 @@
       {
           // raise something;
       }
-      [recieveQueue removeObject:line];
+      @try {
+        [recieveQueue removeObject:line];
+      }
+      @catch (NSException *exception) {
+        NSLog(@"processProgramInThread caused exception");
+        NSLog(@"%@", [exception name]);
+        NSLog(@"%@", [exception userInfo]);
+      }
     } while ([recieveQueue count] > 0);
   }// end while YES
   
