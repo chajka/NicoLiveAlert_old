@@ -95,7 +95,7 @@
   NSURL *url = [NSURL URLWithString:LoginAPIServerURL];
   NSData *result = [http postMessage:postdata ToURL:url];
   NSError *err;
-  NSXMLDocument *xml = [[NSXMLDocument alloc] initWithData:result options:NSXMLDocumentTidyXML error:&err];
+  NSXMLDocument *xml = [[[NSXMLDocument alloc] initWithData:result options:NSXMLDocumentTidyXML error:&err] autorelease];
   NSXMLElement *root = [xml rootElement];
   	// check success
   if ((root == nil) || ([[[root attributeForName:@"status"] stringValue] isEqualToString:@"ok"] == NO))
@@ -110,8 +110,8 @@
   
 		// correct my communities & channels
   url = [NSURL URLWithString:[NSString stringWithFormat:AlertStatusAPIURL, loginTicket]];
-	result = [[http httpData:url] autorelease];
-  xml = [[NSXMLDocument alloc] initWithData:result options:NSXMLDocumentTidyXML error:&err];
+	result = [http httpData:url];
+  xml = [[[NSXMLDocument alloc] initWithData:result options:NSXMLDocumentTidyXML error:&err] autorelease];
   root = [xml rootElement];
     // check success
   if ((root == nil) || ([[[root attributeForName:@"status"] stringValue] isEqualToString:@"ok"] == NO))
@@ -436,7 +436,7 @@
   [self newLive:[live title] description:[live description] withImage:[live thumbnail] url:[[live liveURL] absoluteString]];
   
 		// make menu item
-	NSMenuItem *item = [[NSMenuItem alloc] initWithTitle:@"" action:@selector(openProgram:) keyEquivalent:@""];
+	NSMenuItem *item = [[[NSMenuItem alloc] initWithTitle:@"" action:@selector(openProgram:) keyEquivalent:@""] autorelease];
 	[item setRepresentedObject:[live liveURL]];
   [live setMenuItem:item]; 
   [item setImage:[live menuImage]];
@@ -515,7 +515,7 @@
 {
   NSError *err;
   NSString *urlStr = [NSString stringWithFormat:StreamInforAPIURL, live];
-  NSData *xmlData = [[http httpData:[NSURL URLWithString:urlStr]] autorelease];
+  NSData *xmlData = [http httpData:[NSURL URLWithString:urlStr]];
   NSXMLDocument *xml = [[[NSXMLDocument alloc] initWithData:xmlData options:NSXMLDocumentTidyXML error:&err] autorelease];
   NSXMLElement *root = [xml rootElement];
   NSXMLNode *status = [root attributeForName:@"status"];
@@ -562,6 +562,7 @@
           // raise something;
       }
       @try {
+        [parser release];
         [recieveQueue removeObject:line];
       }
       @catch (NSException *exception) {

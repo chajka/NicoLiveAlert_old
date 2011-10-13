@@ -96,6 +96,8 @@
   BOOL success;
   if (([loginID isEqualToString:@""] == NO) && ([loginPW isEqualToString:@""] == NO))
     success = [nico login:loginID password:loginPW];
+  else
+    success = NO;
   if (success == YES)
   {		// update keychain
     if ([SFKeychain checkForExistanceOfKeychainItem:ItemName withItemKind:ItemKind forUsername:loginID])
