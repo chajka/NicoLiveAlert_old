@@ -8,6 +8,7 @@
 
 #import "NicoLive.h"
 #import "NicoLiveAlertDefinitions.h"
+#import "RegexKitLite.h"
 
 @interface NicoLive ()
   //
@@ -21,6 +22,7 @@
   // Other application collaboration
 - (void) startFMLE:(NSString *)live;
 - (void) stopFMLE;
+- (void) joinToLive:(NSString *)live;
   // Async URL Connection Delegate
 - (void) connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response;
 - (void) connection:(NSURLConnection *)connection didReceiveData:(NSData *)data;
@@ -409,6 +411,18 @@
   {
     NSWorkspace *ws = [NSWorkspace sharedWorkspace];
     [ws openURL:url];
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:CollaborateWithCharlestonAtAutoOpen] == YES)
+    {
+      NSString *urlStr = [url absoluteString];
+      NSString *live = [urlStr stringByMatching:@"((lv|co)\\d+)" capture:1L];
+      [self joinToLive:live];
+    }
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:JoinByCharlestonOpendLive] == YES)
+    {
+      NSString *urlStr = [url absoluteString];
+      NSString *live = [urlStr stringByMatching:@"((lv|co)\\d+)" capture:1L];
+      [self joinToLive:live];
+    }
   }// end if
 }// end - (void) openURL:(NSURL *)url
 
@@ -495,6 +509,12 @@
   NSDistantObject *fmle = [NSConnection rootProxyForConnectionWithRegisteredName:FMELauncher host:@""];
   [fmle stopFMLE];
 }// end - (void) stopFMLE
+
+- (void) joinToLive:(NSString *)live
+{
+  NSDistantObject *charleston = [NSConnection rootProxyForConnectionWithRegisteredName:Charleston host:@""];
+  [charleston joinToLive:live];
+}// - (void) joinToLive:(NSString *)live
 
 #pragma mark -
 #pragma mark timer
@@ -630,7 +650,22 @@
         [self performSelector:@selector(foundNewLive:) onThread:[NSThread mainThread] withObject:root waitUntilDone:YES];
         [xml release];
           // check start FMLE
-        if (([[program objectAtIndex:OffsetUserID] isEqualToString:myUserID] == YES) && ([[NSUserDefaults standardUserDefaults] boolForKey:CollaborateWithFMELauncher] == YES))
+        if ([[program objectAtIndex:OffsetUserID] isEqualToString:myUserID] == YES)
+        {
+          broadcasting = YES;
+          	// check start FMLE
+          if ([[NSUserDefaults standardUserDefaults] boolForKey:CollaborateWithFMELauncher] == YES)
+          {
+            [self startFMLE:live];
+            NicoLiveProgram *program = [activePrograms objectForKey:live];
+            [program addObserver:self forKeyPath:@"liveAlive" options:NSKeyValueObservingOptionNew context:nil];
+          }// end if
+            // check Charleston
+          if ([[NSUserDefaults standardUserDefaults] boolForKey:CollaborateWithCharlestonMyBroadcast] == YES)
+            [self joinToLive:live];
+        }// end if my broadcast
+          // check start Charleston
+        if (([[program objectAtIndex:OffsetUserID] isEqualToString:myUserID] == YES) && ([[NSUserDefaults standardUserDefaults] boolForKey:CollaborateWithCharlestonMyBroadcast] == YES))
         {
           broadcasting = YES;
           [self startFMLE:live];
