@@ -9,6 +9,7 @@
 #import "NicoLiveAlertAppDelegate.h"
 #import "NicoLiveAlertDefinitions.h"
 #import "SFKeychain.h"
+#import "RegexKitLite.h"
 
 @interface NicoLiveAlertAppDelegate ()
 - (void) installToolBarMenu;
@@ -157,6 +158,12 @@
   NSURL *url = [sender representedObject];
   NSWorkspace *ws = [NSWorkspace sharedWorkspace];
   [ws openURL:url];
+  if ([[NSUserDefaults standardUserDefaults] boolForKey:JoinByCharlestonOpendLive] == YES)
+  {
+    NSString *urlStr = [url absoluteString];
+    NSString *live = [urlStr stringByMatching:@"((lv|co)\\d+)" capture:1L];
+    [nico joinToLive:live];
+  }
 }// end - (IBAction) openProgram:(id)sender
 
 #pragma mark -
