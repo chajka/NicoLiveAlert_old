@@ -19,10 +19,6 @@
 - (void) foundNewLiveInRSS:(NSXMLNode *)node;
   // notification
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)program change:(NSDictionary *)change context:(void *)context;
-  // Other application collaboration
-- (void) startFMLE:(NSString *)live;
-- (void) stopFMLE;
-- (void) joinToLive:(NSString *)live;
   // Async URL Connection Delegate
 - (void) connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response;
 - (void) connection:(NSURLConnection *)connection didReceiveData:(NSData *)data;
@@ -411,13 +407,8 @@
   {
     NSWorkspace *ws = [NSWorkspace sharedWorkspace];
     [ws openURL:url];
-    if ([[NSUserDefaults standardUserDefaults] boolForKey:CollaborateWithCharlestonAtAutoOpen] == YES)
-    {
-      NSString *urlStr = [url absoluteString];
-      NSString *live = [urlStr stringByMatching:@"((lv|co)\\d+)" capture:1L];
-      [self joinToLive:live];
-    }
-    if ([[NSUserDefaults standardUserDefaults] boolForKey:JoinByCharlestonOpendLive] == YES)
+    if (([[NSUserDefaults standardUserDefaults] boolForKey:CollaborateWithCharlestonAtAutoOpen] == YES) ||
+        ([[NSUserDefaults standardUserDefaults] boolForKey:JoinByCharlestonOpendLive] == YES))
     {
       NSString *urlStr = [url absoluteString];
       NSString *live = [urlStr stringByMatching:@"((lv|co)\\d+)" capture:1L];
@@ -735,5 +726,11 @@
   NSURL *url = [NSURL URLWithString:clickContext];
   NSWorkspace *ws = [NSWorkspace sharedWorkspace];
   [ws openURL:url];
+  if ([[NSUserDefaults standardUserDefaults] boolForKey:JoinByCharlestonOpendLive] == YES)
+  {
+    NSString *urlStr = [url absoluteString];
+    NSString *live = [urlStr stringByMatching:@"((lv|co)\\d+)" capture:1L];
+    [self joinToLive:live];
+  }
 }// end - (void) growlNotificationWasClicked:(id)clickContext
 @end

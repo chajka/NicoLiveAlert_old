@@ -67,6 +67,10 @@
 - (void) rejectEndedProgram;
   // async url connection for rss search
 - (void) startMakeAllRSSAsync;
+  // Other application collaboration
+- (void) startFMLE:(NSString *)live;
+- (void) stopFMLE;
+- (void) joinToLive:(NSString *)live;
 	// Growling
 - (void) newLive:(NSString *)title description:(NSString *)desc withImage:(NSImage *)image url:(NSString *)url;
 - (void) loginResult:(NSString *)title message:(NSString *)message withImage:(NSImage *)image;
