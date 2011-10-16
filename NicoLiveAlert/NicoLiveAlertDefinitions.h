@@ -80,6 +80,9 @@
 #define AutoOpen	@"AutoOpenCheckedLive"
 #define CollaborateWithFMELauncher	@"CollaborateWithFMELauncher"
 #define DoNotOpenWhenBroadcasting	@"DoNotOpenWhenBroadcasting"
+#define CollaborateWithCharlestonMyBroadcast	@"CollaborateWithCharlestonMyBroadcast"
+#define CollaborateWithCharlestonAtAutoOpen	@"CollaborateWithCharlestonAtAutoOpen"
+#define JoinByCharlestonOpendLive	@"JoinByCharlestonOpendLive"
 
 	// resource / dicitonary key constant
 #define KeyCommunity	@"community"
@@ -101,6 +104,7 @@
 
 	// NSConnection other Application definition
 #define FMELauncher	@"FMELauncher"
+#define Charleston	@"Charleston"
 
 	// Localizable strings
 #define LoginProgress	NSLocalizedString(@"LoginProgress", @"")
