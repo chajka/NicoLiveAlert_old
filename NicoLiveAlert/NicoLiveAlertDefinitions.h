@@ -83,6 +83,14 @@
 #define CollaborateWithCharlestonMyBroadcast	@"CollaborateWithCharlestonMyBroadcast"
 #define CollaborateWithCharlestonAtAutoOpen	@"CollaborateWithCharlestonAtAutoOpen"
 #define JoinByCharlestonOpendLive	@"JoinByCharlestonOpendLive"
+	//
+#define LaunchBrowser @"LaunchBrowser"
+#define LaunchCamTwist	@"LaunchCamTwist"
+#define LaunchLadioCast	@"LaunchLadioCast"
+#define LaunchSkype	@"LaunchSkype"
+#define LaunchFMELauncher	@"LaunchFMELauncher"
+#define	LaunchCommentViewer	@"LaunchCommentViewer"
+#define	LaunchVideoCapture	@"LaunchVideoCapture"
 
 	// resource / dicitonary key constant
 #define KeyCommunity	@"community"
@@ -130,4 +138,14 @@ enum StatusBarMenuItems {
   MenuPreference,
   MenuQuit,
   MenuAbout
+};
+
+enum BrowserPopupItems {
+  ItemSafari = 1101,
+  ItemFirefox,
+  ItemChrome,
+  ItemOpera,
+  ItemWebKit,
+  ItemOmniWeb,
+  ItemSleipnir
 };
